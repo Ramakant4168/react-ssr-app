@@ -28,11 +28,7 @@ export default function handleRender(req, res) {
     let year = (map.has('yr') && (map.get('yr')!=0) ) ? map.get('yr') : null
     let launch = (map.has('lau') && (map.get('lau') !=0) ) ? map.get('lau') : null
     let land = (map.has('lnd') && (map.get('lnd')!=0)) ? map.get('lnd') : null
-    
-    console.log("1",year)
-    console.log("2",launch)
-    console.log("3",launch)
-
+  
     url = getUrlBasedOnSate(year,launch,land)
   }
 

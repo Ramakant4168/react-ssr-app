@@ -75,7 +75,6 @@ export function getUrlBasedOnSate(year = null, launch = null, land = null) {
         limit=100&land_success=${land}`
     }
 
-    console.log("=====url",url)
     return url;
 
 }
