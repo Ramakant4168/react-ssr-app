@@ -1,0 +1,53 @@
+.container {
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    overflow: scroll;
+    padding: 15px ;
+}
+
+.cardContainer {
+    background:  rgb(249, 250, 249);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 24%;
+  }
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding-left: 15px;
+    padding-top: 10px;
+  }
+
+
+  .img{
+     background: rgb(231, 229, 229);
+      width: 90%;
+  }
+
+
+  @media screen and (max-width: 700px){
+    .container {
+      display: unset;
+      margin-left:0px
+     } 
+
+     .cardContainer {
+      width: 100%;
+      padding-top : 5px
+    }
+  }
+  
+  @media screen and (min-width: 701px) and (max-width: 1024px){
+    .cardContainer {
+      width: 35%;
+      padding : 30px
+    }
+  }
+
+ 
+  
