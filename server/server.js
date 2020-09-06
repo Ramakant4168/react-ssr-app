@@ -12,6 +12,8 @@ app.use(compression());
 
 const compiler = webpack(webpackConfig);
 
+app.use('/static', Express.static('static'))
+
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
   publicPath: webpackConfig.output.publicPath,
