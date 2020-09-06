@@ -15,10 +15,12 @@ const preloadedState = window.__PRELOADED_STATE__
 
 delete window.__PRELOADED_STATE__
 
+
 const store = createStore(
   spaceXApp,
   preloadedState,
-  compose(applyMiddleware(thunk, Logger), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+  compose(applyMiddleware(thunk, Logger))
+  //, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
 hydrate(

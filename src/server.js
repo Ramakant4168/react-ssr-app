@@ -1,6 +1,6 @@
 import Axios from 'axios'
 import React from 'react'
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware} from 'redux'
 import { Provider } from 'react-redux'
 import { renderToString } from 'react-dom/server'
 import thunk from 'redux-thunk'
@@ -53,19 +53,21 @@ export default function handleRender(req, res) {
         </Provider>
       )
       const finalState = store.getState()
+      res.set('Cache-Control', 'public, max-age=31557600')
       res.send(renderFullPage(html, finalState))
     })
     .catch(error => {
-      console.log("=====error",error)
       res.send("Error occured while fetching data from spaceX server!!!")
     });
 }
 
 function renderFullPage(html, preloadedState) {
   return `
-    <html>
+    <html lang="en">
       <head>
-        <title>Redux Universal Example</title>
+        <link rel="preconnect" href="https://images2.imgbox.com">
+        <title>SpaceX Missions</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
       </head>
       <body>
         <div id="root">${html}</div>
@@ -77,7 +79,3 @@ function renderFullPage(html, preloadedState) {
     </html>
     `
 }
-
-// app.listen(port,()=>{
-//   console.log("server listening on 3000")
-// })

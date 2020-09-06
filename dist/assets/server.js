@@ -101,10 +101,6 @@ module.exports =
 	    var launch = map.has('lau') && map.get('lau') != 0 ? map.get('lau') : null;
 	    var land = map.has('lnd') && map.get('lnd') != 0 ? map.get('lnd') : null;
 
-	    console.log("1", year);
-	    console.log("2", launch);
-	    console.log("3", launch);
-
 	    url = (0, _utils.getUrlBasedOnSate)(year, launch, land);
 	  }
 
@@ -125,20 +121,16 @@ module.exports =
 	      )
 	    ));
 	    var finalState = store.getState();
+	    res.set('Cache-Control', 'public, max-age=31557600');
 	    res.send(renderFullPage(html, finalState));
 	  }).catch(function (error) {
-	    console.log("=====error", error);
 	    res.send("Error occured while fetching data from spaceX server!!!");
 	  });
 	}
 
 	function renderFullPage(html, preloadedState) {
-	  return '\n    <html>\n      <head>\n        <title>Redux Universal Example</title>\n      </head>\n      <body>\n        <div id="root">' + html + '</div>\n        <script>\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n        <script src="/assets/bundle.js"></script>\n      </body>\n    </html>\n    ';
+	  return '\n    <html lang="en">\n      <head>\n        <link rel="preconnect" href="https://images2.imgbox.com">\n        <title>SpaceX Missions</title>\n        <meta name="viewport" content="width=device-width, initial-scale=1">\n      </head>\n      <body>\n        <div id="root">' + html + '</div>\n        <script>\n          window.__PRELOADED_STATE__ = ' + JSON.stringify(preloadedState).replace(/</g, '\\u003c') + '\n        </script>\n        <script src="/assets/bundle.js"></script>\n      </body>\n    </html>\n    ';
 	}
-
-	// app.listen(port,()=>{
-	//   console.log("server listening on 3000")
-	// })
 
 /***/ }),
 /* 1 */
@@ -293,7 +285,6 @@ module.exports =
 	        url = 'https://api.spacexdata.com/v3/launches?\n        limit=100&land_success=' + land;
 	    }
 
-	    console.log("=====url", url);
 	    return url;
 	}
 
@@ -852,7 +843,7 @@ module.exports =
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: _styles2.default.card },
-	                    _react2.default.createElement('img', { src: imgUrl, alt: 'Avatar', className: _styles2.default.img }),
+	                    _react2.default.createElement('img', { src: imgUrl, alt: 'Loading...', loading: 'lazy', className: _styles2.default.img }),
 	                    _react2.default.createElement(
 	                        'p',
 	                        { style: { color: 'blue' } },

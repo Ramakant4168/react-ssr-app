@@ -10,7 +10,7 @@ export default class ListItem extends Component{
          return(
         <div className={Styles.cardContainer}>
             <div  className={Styles.card}>
-            <img src={imgUrl} alt="Avatar" className={Styles.img}></img>
+            <img src={imgUrl} alt="Loading..." loading="lazy" className={Styles.img}></img>
             <p style={{color:'blue'}}>{mission.mission_name } #{mission.flight_number }</p>
             <p> <label>Lauch Year :</label> <label style={{color:'skyblue'}}>{ mission.launch_year }</label></p>
             <p>
