@@ -9,7 +9,7 @@
 3. Add heroku api key and app name
 4. Push/merge to master branch or run build from circleCi
 
-![alt text](https://github.com/Ramakant4168/ssr-spaceX/blob/master/Screenshot%202020-09-03%20at%204.55.00%20PM.png)
+![alt text](https://github.com/Ramakant4168/react-ssr-app/blob/master/circleci.png)
 
 # Responsive behaviour
 
@@ -18,28 +18,27 @@ Majorly three screen types are handled currently
 2. Ipad 700-1024 px
 3. Desktop 1024-1440 px
 
-![alt text](https://github.com/Ramakant4168/ssr-spaceX/blob/master/Screenshot%202020-09-03%20at%204.51.42%20PM.png)
+Desktop
+![alt text](https://github.com/Ramakant4168/react-ssr-app/blob/master/%20desktopview.png)
 
-![alt text](https://github.com/Ramakant4168/ssr-spaceX/blob/master/Screenshot%202020-09-03%20at%204.52.48%20PM.png)
+Ipad
+![alt text](https://github.com/Ramakant4168/react-ssr-app/blob/master/Ipadview.png)
 
-![alt text](https://github.com/Ramakant4168/ssr-spaceX/blob/master/Screenshot%202020-09-03%20at%204.53.36%20PM.png)
+Mobile
+![alt text](https://github.com/Ramakant4168/react-ssr-app/blob/master/mobilevie1.png)
 
-![alt text](https://github.com/Ramakant4168/ssr-spaceX/blob/master/Screenshot%202020-09-03%20at%204.53.53%20PM.png)
+![alt text](https://github.com/Ramakant4168/react-ssr-app/blob/master/mobileview2.png)
 
 # lightHouse Performance Data 
 
-There is a large scope of improvements as it was built in short sprint, there are various ways you can optimise performance
-1. Analyzing bundle size and removing unused bundels
-2. Compression
+On Local Server
+![alt text](https://github.com/Ramakant4168/react-ssr-app/blob/master/lighthouse-local.png)
 
-![alt text](https://github.com/Ramakant4168/ssr-spaceX/blob/master/Screenshot%202020-09-03%20at%204.58.05%20PM.png)
+On Heroku Server
+![alt text](https://github.com/Ramakant4168/react-ssr-app/blob/master/lighthouse-server.png)
+
 
 # Heroku Live URL
-https://ssr-spacex-ram.herokuapp.com/
+https://react-ssr-app-ram4168.herokuapp.com/
 
-
-# Credits
-
-Basic SSR project structure with hello world 
-https://github.com/hyperh/react-ssr-tut/tree/css-modules
 
